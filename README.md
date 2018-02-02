@@ -40,7 +40,7 @@ To inspect the site on your phone:
 Initially, the time to resize pizzas was just over 100ms which can be vastly improved.
 In addition, I used the DevTools timeline feature to see what was going on when i scrolled up and down. As you can see in the picture, there is a Layout error. The warning states: "___Forced reflow___ is likely a performance bottleneck".
 
-![pre-optimization](website-optim/views/images/pre-optimization)
+![pre-optimization](website-optim/img/pre-optimization.png)
 
 ### Optimizations in pizza.html
 ---------------------------------------------------------------
@@ -56,7 +56,7 @@ In addition, I used the DevTools timeline feature to see what was going on when 
 The time to re-size pizzas dropped to around 1ms.
 The timeline in DevTools shows that there are no more Layout errors.
 
-![post-optimization](website-optim/views/images/post-optimization) 
+![post-optimization](website-optim/img/post-optimization.png) 
 
 
 #### Optimization Tips and Tricks
@@ -78,7 +78,7 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 * <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
 * <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
 
-####Resources used:
+#### Resources used:
 ---------------------------------------------------------------
 * Udacity FSL quiz (8.10) [Stop FSL Link](https://classroom.udacity.com/nanodegrees/nd001/parts/e87c34bf-a9c0-415f-b007-c2c2d7eead73/modules/273584856175461/lessons/4147498575/concepts/41542085800923)
 * Udacity forums on Web Optimization Project. 
