@@ -1,5 +1,5 @@
 ## Website Performance Optimization portfolio project
-============================================================
+------------------------------------------------------------
 
 ### Summary
 ------------------------------------------------------------
@@ -35,12 +35,16 @@ To inspect the site on your phone:
 * Copy the public URL ngrok gives you and try running it through PageSpeed Insights! 
 
 
-### Initial State of the App
+### Results
 ---------------------------------------------------------------
+##### Before
 Initially, the time to resize pizzas was just over 100ms which can be vastly improved.
 In addition, I used the DevTools timeline feature to see what was going on when i scrolled up and down. As you can see in the picture, there is a Layout error. The warning states: "___Forced reflow___ is likely a performance bottleneck".
 
-![pre-optimization](website-optim/img/pre-optimization.png)
+##### After
+The time to re-size pizzas dropped to around 1ms.
+The timeline in DevTools shows that there are no more Layout errors.
+
 
 ### Optimizations in pizza.html
 ---------------------------------------------------------------
@@ -50,13 +54,6 @@ In addition, I used the DevTools timeline feature to see what was going on when 
 * Moved 'pizzasDiv outside of the for loop so it only gets generated once when the page loads.	
 * Saved the querySelector for 'movingPizzas1' to the 'movingPizzas' variable and moved it outside the for loop so it only generates once.
 * Set the number of the pizzas on Display to be dependent on the height of the screen.
-
-### App post-optimization
----------------------------------------------------------------
-The time to re-size pizzas dropped to around 1ms.
-The timeline in DevTools shows that there are no more Layout errors.
-
-![post-optimization](website-optim/img/post-optimization.png) 
 
 
 #### Optimization Tips and Tricks
