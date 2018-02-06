@@ -4,7 +4,7 @@
 ### Summary
 ------------------------------------------------------------
 The purpose of this project is to optimize the website by optimizing the critical rendering path through methods learned 
-in the Udacity Web Optimization course and Critical rendering Path score.
+in the Udacity Web Optimization course and Critical Rendering Path score.
 
 ### Running Instructions
 -------------------------------------------------------------
@@ -51,9 +51,19 @@ The timeline in DevTools shows that there are no more Layout errors.
 * In the changePizzaSizes function:
 	* Assigned the querySelector to the variable "randomPizza" and moved it outside the for loop so it does not generate with every pass.
 	* Also, moved the dx and newWidth declarations outside the for loop.
+  * Saved the array's length in len so it is not checked at each iteration, hence more efficency.
 * Moved 'pizzasDiv outside of the for loop so it only gets generated once when the page loads.	
+* Moved the car scrollTip statement outside the for loop in order to enhance fps, because this statement is the same for all background pizzas.
 * Saved the querySelector for 'movingPizzas1' to the 'movingPizzas' variable and moved it outside the for loop so it only generates once.
+* Moved var elem outside the for loop so it does not run 
+each time the for loop is executed.
 * Set the number of the pizzas on Display to be dependent on the height of the screen.
+
+### Optimizations in index.html
+--------------------------------------------------------------------
+* Loaded fonts using JavaScript.
+* Inlined the css and print stylesheet to avoid render blocking.
+* Resized/Optimized pizzeria.jpg image.
 
 
 #### Optimization Tips and Tricks
