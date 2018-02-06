@@ -450,7 +450,9 @@ var resizePizzas = function(size) {
     var randomPizza = document.getElementsByClassName("randomPizzaContainer");
     var dx = determineDx(randomPizza[0], size);
     var newwidth = (randomPizza[0].offsetWidth + dx) + 'px';
-    for (var i = 0; i < randomPizza.length; i++) {
+    // saved the array's length in len so
+    // the array's length property is not accessed to check its value at each iteration
+    for (var i = 0, len = randomPizza.length; i < len; i++) {
       randomPizza[i].style.width = newwidth;
     }
   }
@@ -500,11 +502,12 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
+  // document.body.scrollTop is no longer supported in Chrome.
+  // moved the car scrollTip statement outside the for loop in order to enhance fps, because
+  // this statement is the same for all background pizzas.
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   var items = document.querySelectorAll('.mover');
   for (var i = 0; i < items.length; i++) {
-    // document.body.scrollTop is no longer supported in Chrome.
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     var phase = Math.sin((scrollTop / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
@@ -532,8 +535,10 @@ document.addEventListener('DOMContentLoaded', function() {
   //saved the getElementsById to the 'movingPizzas' variable
   //and moved it outside the for loop so it only generates once
   var movingPizzas = document.getElementById('movingPizzas1');
+  //also moved var elem outside the for loop so it does not run 
+  // each time the for loop is executed
+  var elem = document.createElement('img');
   for (var i = 0; i < pizzasOnDisplay; i++) {
-    var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
