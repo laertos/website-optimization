@@ -535,10 +535,9 @@ document.addEventListener('DOMContentLoaded', function() {
   //saved the getElementsById to the 'movingPizzas' variable
   //and moved it outside the for loop so it only generates once
   var movingPizzas = document.getElementById('movingPizzas1');
-  //also moved var elem outside the for loop so it does not run 
-  // each time the for loop is executed
-  var elem = document.createElement('img');
+  
   for (var i = 0; i < pizzasOnDisplay; i++) {
+    var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
