@@ -7,18 +7,6 @@
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
 
-    <!-- Hmm, what is the impact of web fonts on speed? Measure it...
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> --> 
-
-    <!--loading fonts with js -->
-    </script>
-    <script src="//fonts.googleapis.com/css?family=Open+Sans:400,700">
-    <script type="text/javascript">
-    WebFont.load ({
-        google: { families: [ 'Open+Sans:400,700:latin' ] }
-      });
-    <style type="text/css">
-      </script>
 
       <!-- Inlined the css and print stylesheet to avoid render blocking -->
       <style>
@@ -53,7 +41,7 @@
         .hero { padding: 2em; background-color: #f8f8f8; font-size:1.2em;
           border-bottom: 1px solid #ccc;
           border-top: 1px solid #ccc;
-}
+        }
 
         .content { padding: 1em 1em; }
         .content li { list-style-type: none; font-size: 1.1em;}
@@ -72,6 +60,7 @@
           header p { padding-left: 4.5em;}
         }
 
+        /*Print media */
         @media print {
           * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
           a, a:visited { color: #444 !important; text-decoration: underline; }
@@ -81,11 +70,9 @@
           @page { margin: 0.5cm; }
           p, h2, h3 { orphans: 3; widows: 3; }
           h2, h3{ page-break-after: avoid; }
-}
+          }
       </style>
     
-    <link href="css/print.css" rel="stylesheet">
-
     <script>
       (function(w,g){w['GoogleAnalyticsObject']=g;
       w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
@@ -130,6 +117,7 @@
           </li>
 
           <li>
+            <!-- Image resized and optimized -->
             <img style="width: 100px;" src="views/images/pizzeria-resized.jpg">
             <a href="views/pizza.html">Cam's Pizzeria</a>
             <p>Who wants a performant pizza?</p>
@@ -141,5 +129,14 @@
         <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
       </footer>
     </div>
+    <!--loading fonts with js -->
+    
+    <script src="//fonts.googleapis.com/css?family=Open+Sans:400,700">
+    <script type="text/javascript">
+    WebFont.load ({
+        google: { families: [ 'Open+Sans:400,700:latin' ] }
+      });
+    <style type="text/css">
+      </script>
   </body>
 </html>
